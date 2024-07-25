@@ -2,31 +2,43 @@
 layout: creative
 title: "Home"
 
+# Services
+#  icons: https://icons.getbootstrap.com
 services:
   - title: AWS
-    icon: aws
+    icon: bi-amazon
     description: Leveraging Amazon Web Services for scalable and secure cloud solutions.
   - title: Kubernetes
+    icon: bi-life-preserver
     description: Orchestrating your containerized applications for maximum efficiency.
   - title: DevOps & Automation
+    icon: bi-arrow-repeat
     description: Streamlining your development pipeline for continuous integration and delivery using Terraform, CloudFormation and CDK with GitLab and GitHub.
   - title: Microservices
+    icon: bi-box-fill
     description: Breaking down applications into manageable, deployable services.
   - title: Serverless Solutions
+    icon: bi-rocket-takeoff
     description: Building highly scalable and cost-effective serverless applications.
   - title: Cloud Migrations
+    icon: bi-cloud-arrow-up-fill
     description: Seamlessly transitioning your existing workloads to the cloud.
   - title: Cost Optimization
+    icon: bi-cash
     description: Reducing your cloud expenditure while enhancing performance.
   - title: Security Audits
+    icon: bi-card-checklist
     description: Ensuring your cloud environments are secure and compliant.
   - title: Web Application Development
+    icon: bi-globe2
     description: Building with Drupal, Symfony, RubyOnRails and many more, including custom platforms.
   - title: Programming Languages
+    icon: bi-file-code
     description: Developing with Python, PHP, Ruby, Go and Rust.
 ---
     
 {% include navigation.html %}
+
 <!-- Masthead-->
 <header class="masthead">
   <div class="container px-4 px-lg-5 h-100">
@@ -64,7 +76,7 @@ services:
       {% for service in page.services %}
       <div class="col-lg-3 col-md-6 text-center">
         <div class="mt-5">
-          <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+          <div class="mb-2"><i class="{{ service.icon }} fs-1 text-primary"></i></div>
           <h3 class="h4 mb-2">{{ service.title }}</h3>
           <p class="text-muted mb-0">{{ service.description }}</p>
         </div>
@@ -73,67 +85,9 @@ services:
     </div>
   </div>
 </section>
-<!-- Portfolio-->
-<div id="portfolio">
-  <div class="container-fluid p-0">
-    <div class="row g-0">
-      <div class="col-lg-4 col-sm-6">
-        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
-          <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
-          <div class="portfolio-box-caption">
-            <div class="project-category text-white-50">Category</div>
-            <div class="project-name">Project Name</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
-          <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
-          <div class="portfolio-box-caption">
-            <div class="project-category text-white-50">Category</div>
-            <div class="project-name">Project Name</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
-          <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
-          <div class="portfolio-box-caption">
-            <div class="project-category text-white-50">Category</div>
-            <div class="project-name">Project Name</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
-          <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
-          <div class="portfolio-box-caption">
-            <div class="project-category text-white-50">Category</div>
-            <div class="project-name">Project Name</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
-          <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
-          <div class="portfolio-box-caption">
-            <div class="project-category text-white-50">Category</div>
-            <div class="project-name">Project Name</div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
-          <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
-          <div class="portfolio-box-caption p-3">
-            <div class="project-category text-white-50">Category</div>
-            <div class="project-name">Project Name</div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+
+{% include portfolio.html %}
+
 <!-- Call to action-->
 <section class="page-section bg-dark text-white">
   <div class="container px-4 px-lg-5 text-center">
@@ -211,15 +165,14 @@ services:
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-lg-4 text-center mb-5 mb-lg-0">
         <i class="bi-phone fs-2 mb-3 text-muted"></i>
-        <div>+1 (555) 123-4567</div>
+        <div>{{ site.phone }}</div>
       </div>
     </div>
   </div>
 </section>
-<!-- Footer-->
-<footer class="bg-light py-5">
-  <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; {{ site.time  | date: "%Y" }} - {{ site.name }}</div></div>
-</footer>
+
+{% include footer.html %}
+
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- SimpleLightbox plugin JS-->
