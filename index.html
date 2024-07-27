@@ -1,0 +1,183 @@
+---
+layout: creative
+title: "Home"
+
+# Services
+#  icons: https://icons.getbootstrap.com
+services:
+  - title: AWS
+    icon: bi-amazon
+    description: Leveraging Amazon Web Services for scalable and secure cloud solutions.
+  - title: Kubernetes
+    icon: bi-life-preserver
+    description: Orchestrating your containerized applications for maximum efficiency.
+  - title: DevOps & Automation
+    icon: bi-arrow-repeat
+    description: Streamlining your development pipeline for continuous integration and delivery using Terraform, CloudFormation and CDK with GitLab and GitHub.
+  - title: Microservices
+    icon: bi-box-fill
+    description: Breaking down applications into manageable, deployable services.
+  - title: Serverless Solutions
+    icon: bi-rocket-takeoff
+    description: Building highly scalable and cost-effective serverless applications.
+  - title: Cloud Migrations
+    icon: bi-cloud-arrow-up-fill
+    description: Seamlessly transitioning your existing workloads to the cloud.
+  - title: Cost Optimization
+    icon: bi-cash
+    description: Reducing your cloud expenditure while enhancing performance.
+  - title: Security Audits
+    icon: bi-card-checklist
+    description: Ensuring your cloud environments are secure and compliant.
+  - title: Web Application Development
+    icon: bi-globe2
+    description: Building with Drupal, Symfony, RubyOnRails and many more, including custom platforms.
+  - title: Programming Languages
+    icon: bi-file-code
+    description: Developing with Python, PHP, Ruby, Go and Rust.
+
+# Service Catalog
+# service_catalog_url: /blaize-it-service-catalog.pdf    
+---
+    
+{% include navigation.html %}
+
+<!-- Masthead-->
+<header class="masthead">
+  <div class="container px-4 px-lg-5 h-100">
+    <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+      <div class="col-lg-8 align-self-end">
+        <h1 class="text-white font-weight-bold">{{ site.title }}</h1>
+        <hr class="divider" />
+      </div>
+      <div class="col-lg-8 align-self-baseline">
+        <p class="text-white-75 mb-5">{{ site.description }}</p>
+        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- About-->
+<section class="page-section bg-primary" id="about">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="text-white mt-0">Who are we?</h2>
+        <hr class="divider divider-light" />
+        <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
+      </div>
+      <div class="row gx-4 gx-lg-5 pb-3">
+        <div class="col-lg-6 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2 pb-3"><img class="rounded-circle img-responsive" src="/assets/img/profile/aaron-carlucci.png" width="150px" /></div>
+            <h3 class="text-white h4 mb-2">Aaron Carlucci</h3>
+            <p class="text-white-75 mb-0">Technology professional with 20 years of experience in AWS, DevOps and web application development. Driven to discover best-fit, high-quality technical solutions in friendly partnerships.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2 pb-3"><img class="rounded-circle img-responsive pb-3" src="/assets/img/profile/daniel-meier.png" width="150px" /></div>
+            <h3 class="text-white h4 mb-2">Daniel Meier</h3>
+            <p class="text-white-75 mb-0">This is a short description about Dan.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-lg-8 text-center">
+          <hr class="divider divider-light" />
+          <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services-->
+<section class="page-section" id="services">
+  <div class="container px-4 px-lg-5">
+    <h2 class="text-center mt-0">At Your Service</h2>
+    <hr class="divider" />
+    <div class="row gx-4 gx-lg-5">
+      {% for service in page.services %}
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="mt-5">
+          <div class="mb-2"><i class="{{ service.icon }} fs-1 text-primary"></i></div>
+          <h3 class="h4 mb-2">{{ service.title }}</h3>
+          <p class="text-muted mb-0">{{ service.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include portfolio.html %}
+
+{%- if page.service_catalog_url -%}
+<!-- Call to action-->
+<section class="page-section bg-dark text-white">
+  <div class="container px-4 px-lg-5 text-center">
+    <h2 class="mb-4">Download our Service Catalog!</h2>
+    <a class="btn btn-light btn-xl" href="{{ page.service_catalog_url }}">Download Now!</a>
+  </div>
+</section>
+{%- endif -%}
+
+<!-- Contact-->
+<section class="page-section" id="contact">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-lg-8 col-xl-6 text-center">
+        <h2 class="mt-0">Let's Get In Touch!</h2>
+        <hr class="divider" />
+        <p class="text-muted mb-5">Ready to start your next project with us? Send us a messages and we will get back to you as soon as possible!</p>
+      </div>
+    </div>
+    <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+      <div class="col-lg-6">
+        <form id="contactForm" action="https://formspree.io/f/{{ site.formspree_form_id  }}" method="POST">
+          <!-- Name input-->
+          <div class="form-floating mb-3">
+            <input class="form-control" id="name" type="text" name="name" placeholder="Enter your name..." required />
+            <label for="name">Full name</label>
+          </div>
+          <!-- Email address input-->
+          <div class="form-floating mb-3">
+            <input class="form-control" id="email" type="email" name="email" placeholder="name@example.com" required />
+            <label for="email">Email address</label>
+          </div>
+          <!-- Phone number input-->
+          <div class="form-floating mb-3">
+            <input class="form-control" id="phone" type="tel" name="phone" placeholder="(123) 456-7890" />
+            <label for="phone">Phone number</label>
+          </div>
+          <!-- Message input-->
+          <div class="form-floating mb-3">
+            <textarea class="form-control" id="message" type="text" name="message" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
+            <label for="message">Message</label>
+          </div>
+          <!-- Submit Button-->
+          <div class="d-grid"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button></div>
+        </form>
+      </div>
+    </div>
+    {%- if site.phone -%}
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-lg-4 text-center mb-5 mb-lg-0">
+        <i class="bi-phone fs-2 mb-3 text-muted"></i>
+        <div>{{ site.phone }}</div>
+      </div>
+    </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% include footer.html %}
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- SimpleLightbox plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+<!-- Core theme JS-->
+<script src="assets/scripts.js"></script>
