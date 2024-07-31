@@ -13,7 +13,7 @@ services:
     description: Orchestrating your containerized applications for maximum efficiency.
   - title: DevOps & Automation
     icon: bi-arrow-repeat
-    description: Streamlining your development pipeline for continuous integration and delivery using Terraform, CloudFormation and CDK with GitLab and GitHub.
+    description: Streamlining your development pipeline using Terraform, CloudFormation and CDK with GitLab and GitHub.
   - title: Microservices
     icon: bi-box-fill
     description: Breaking down applications into manageable, deployable services.
@@ -29,12 +29,18 @@ services:
   - title: Security Audits
     icon: bi-card-checklist
     description: Ensuring your cloud environments are secure and compliant.
+  - title: Linux
+    icon: bi-ubuntu
+    description: Advanced, robust administration for Linux servers and applications.
   - title: Web Application Development
     icon: bi-globe2
     description: Building with Drupal, Symfony, RubyOnRails and many more, including custom platforms.
+  - title: AI &amp; Machine Learning
+    icon: bi-robot
+    description: Implementing state-of-the-art AI models to drive intelligent business solutions and innovative applications.
   - title: Programming Languages
     icon: bi-file-code
-    description: Developing with Python, PHP, Ruby, Go and Rust.
+    description: Developing with Python, PHP, Ruby, Go, Rust and more.
 
 # Service Catalog
 # service_catalog_url: /blaize-it-service-catalog.pdf    
@@ -100,7 +106,7 @@ services:
     <hr class="divider" />
     <div class="row gx-4 gx-lg-5">
       {% for service in page.services %}
-      <div class="col-lg-3 col-md-6 text-center">
+      <div class="col-lg-2 col-md-6 text-center">
         <div class="mt-5">
           <div class="mb-2"><i class="{{ service.icon }} fs-1 text-primary"></i></div>
           <h3 class="h4 mb-2">{{ service.title }}</h3>
