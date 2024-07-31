@@ -22,8 +22,8 @@ name: Blaize.IT
 title: Blaize.IT - Technology Solutions & Consulting
 email: hello@blaize.it
 description: >- # this means to ignore newlines until "baseurl:"
-  Blazing fast technology solutions forged in creative fire.
-phone: "+1 (555) 123-4567"
+  Quality solutions. Blazing fast turnaround. Friendly vibe.
+#phone: "+1 (555) 123-4567"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb

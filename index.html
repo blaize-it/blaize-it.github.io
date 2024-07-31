@@ -35,8 +35,11 @@ services:
   - title: Programming Languages
     icon: bi-file-code
     description: Developing with Python, PHP, Ruby, Go and Rust.
+
+# Service Catalog
+# service_catalog_url: /blaize-it-service-catalog.pdf    
 ---
-    
+
 {% include navigation.html %}
 
 <!-- Masthead-->
@@ -54,19 +57,42 @@ services:
     </div>
   </div>
 </header>
+
 <!-- About-->
 <section class="page-section bg-primary" id="about">
   <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-lg-8 text-center">
-        <h2 class="text-white mt-0">We've got what you need!</h2>
+        <h2 class="text-white mt-0">Who are we?</h2>
         <hr class="divider divider-light" />
-        <p class="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-        <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+        <p class="text-white-75 mb-4">We met each other at our last full-time employment gig and discovered professional inspiration, complementary skill sets and fast friendship. We're bootstrapping a shared consulting partnership to offer clients expertise with more efficiency and reliability.</p>
+      </div>
+      <div class="row gx-4 gx-lg-5 pb-3">
+        <div class="col-lg-6 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2 pb-3"><img class="rounded-circle img-responsive" src="/assets/img/profile/aaron-carlucci.png" width="150px" /></div>
+            <h3 class="text-white h4 mb-2">Aaron Carlucci</h3>
+            <p class="text-white-75 mb-0">Technology professional with 20 years of experience in AWS, DevOps and web application development. Driven to discover best-fit, high-quality technical solutions in friendly partnerships.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 text-center">
+          <div class="mt-5">
+            <div class="mb-2 pb-3"><img class="rounded-circle img-responsive" src="https://placehold.co/360x360" width="150px" /></div>
+            <h3 class="text-white h4 mb-2">Daniel Meier</h3>
+            <p class="text-white-75 mb-0">This is a short description about Dan. TODO!</p>
+          </div>
+        </div>
+      </div>
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-lg-8 text-center">
+          <hr class="divider divider-light" />
+          <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 <!-- Services-->
 <section class="page-section" id="services">
   <div class="container px-4 px-lg-5">
@@ -88,13 +114,16 @@ services:
 
 {% include process.html %}
 
+{%- if page.service_catalog_url -%}
 <!-- Call to action-->
 <section class="page-section bg-dark text-white">
   <div class="container px-4 px-lg-5 text-center">
     <h2 class="mb-4">Download our Service Catalog!</h2>
-    <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
+    <a class="btn btn-light btn-xl" href="{{ page.service_catalog_url }}">Download Now!</a>
   </div>
 </section>
+{%- endif -%}
+
 <!-- Contact-->
 <section class="page-section" id="contact">
   <div class="container px-4 px-lg-5">
@@ -133,12 +162,14 @@ services:
         </form>
       </div>
     </div>
+    {%- if site.phone -%}
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-lg-4 text-center mb-5 mb-lg-0">
         <i class="bi-phone fs-2 mb-3 text-muted"></i>
         <div>{{ site.phone }}</div>
       </div>
     </div>
+    {%- endif -%}
   </div>
 </section>
 
